@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
         _transform = transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         var inputY = Input.GetAxis("Vertical");
         var inputX = Input.GetAxis("Horizontal");
@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.AddForce(input * (_speed * Time.deltaTime), ForceMode.Acceleration);
         
         var position = Position;
-        _rigidbody.position = new Vector3(position.x, 0, position.z);
         _transform.forward = _rigidbody.velocity;
     }
 }
