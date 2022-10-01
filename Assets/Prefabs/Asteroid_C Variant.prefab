@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663789539175072079, guid: 68e47be332e839e4c97445c5110b4cf6, type: 3}
       propertyPath: m_Name
-      value: Asteroid_C
+      value: Asteroid_C Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8833351232564395332, guid: 68e47be332e839e4c97445c5110b4cf6, type: 3}
       propertyPath: m_LocalScale.x
