@@ -5333,7 +5333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rbody: {fileID: 8533841425039998894}
-  _maxImpulseForce: 2
+  _maxImpulseForce: 0
   _leftEngineTransform: {fileID: 5158986437646395792}
   _rightEngineTransform: {fileID: 3807964439824580363}
 --- !u!54 &8533841425039998894
