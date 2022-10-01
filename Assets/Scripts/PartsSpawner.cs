@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PartsHolder : MonoBehaviour
+public class PartsSpawner : MonoBehaviour
 {
     [SerializeField]
     private  int _partsBurst;
@@ -20,7 +20,7 @@ public class PartsHolder : MonoBehaviour
         for (int i = 0; i < _partsBurst; i++)
         {
             var spawnPointPosition = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
-            var part = Object.Instantiate(_partPrefab,spawnPointPosition , Quaternion.identity).GetComponent<Part>();
+            var part = Instantiate(_partPrefab,spawnPointPosition , Quaternion.identity).GetComponent<Part>();
             part.Throw((spawnPointPosition - transform.position).normalized);
             part.Collected += PartCollected;
         }
@@ -28,7 +28,7 @@ public class PartsHolder : MonoBehaviour
 
     private void PartCollected(Part part)
     {
-        ScoresHolder.Scores++;
-        Object.Destroy(part.gameObject);
+        ScoresHolder.OnPlayer++;
+        Destroy(part.gameObject);
     }
 }

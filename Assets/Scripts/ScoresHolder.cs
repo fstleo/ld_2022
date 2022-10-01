@@ -17,10 +17,23 @@ public class ScoresHolder
         set
         {
             _scores = value;
+            Debug.Log(_scores);
             if (_scores > MaximumScores)
             {
                 MaximumScores = _scores;
             }
         }
+    }
+
+    public static int OnPlayer
+    {
+        get;
+        set;
+    }
+
+    public static void ApplyScores()
+    {
+        Scores += OnPlayer;
+        OnPlayer = 0;
     }
 }

@@ -35,6 +35,7 @@ public class ShipMovement : MonoBehaviour
         {
             return;
         }
+
         _timer -= Time.fixedDeltaTime;
         var leftEngineThrottle = Random.Range(.9f, 1f)* _maxImpulseForce;
         var rightEngineThrottle = Random.Range(.9f, 1f) * _maxImpulseForce;
