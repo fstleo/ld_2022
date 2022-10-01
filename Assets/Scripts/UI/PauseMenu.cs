@@ -1,22 +1,17 @@
-﻿using UnityEngine;
-
-public class PauseMenu : MonoBehaviour
+﻿public class PauseMenu : Menu
 {
-    private Game _game;
-
     public void BackToGame()
     {
-        _game.Return();
+        Game.Return();
     }
     
     public void BackToMainMenu()
     {
-        _game.ToMainMenu();
+        Game.ToMainMenu();
     }
 
     public void OnExit()
     {
-        _game.Exit();
+        Game.Exit();
     }
-    
 }

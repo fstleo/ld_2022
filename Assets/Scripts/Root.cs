@@ -2,23 +2,22 @@
 
 public class Root : MonoBehaviour
 {
-    private Game _game;
-    private Blast _blast;
-
-    [SerializeField] private PlayerMovement _playerMovement;
+    public static Game GameInstance
+    {
+        get;
+        private set;
+    }
+    
+    [SerializeField]
+    private MainMenu _mainMenu;
     
     private void Awake()
-    { 
-        DontDestroyOnLoad(this);
-        _game = new Game();
-        var sceneSwitcher = new SceneSwitcher(_game);
-        _blast = new Blast();
-        new PlayerInExplosionChecker(_blast, _playerMovement, _game);
-    }
-
-    private void Update()
     {
-        _blast.Tick();
+        if (GameInstance == null)
+        {
+            GameInstance = new Game();
+            var sceneSwitcher = new SceneSwitcher(GameInstance);
+        }
+        _mainMenu.Init(GameInstance);
     }
 }
-

@@ -8,7 +8,7 @@ public class Game
     public GameState State
     {
         get => _state;
-        set
+        private set
         {
             if (_state == value)
             {
@@ -23,6 +23,7 @@ public class Game
     
     public void Start()
     {
+        Time.timeScale = 1f;
         State = GameState.Game;
     }
 
@@ -37,6 +38,12 @@ public class Game
         State = GameState.Pause;
     }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        State = GameState.GameOver;
+    }
+
     public void Exit()
     {
         Application.Quit();
@@ -44,6 +51,7 @@ public class Game
 
     public void Return()
     {
+        Time.timeScale = 1f;
         State = GameState.Game;
     }
 }
