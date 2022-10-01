@@ -5,8 +5,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed;
 
     [SerializeField] private Rigidbody _rigidbody;
-    
 
+    public Vector3 Position => _rigidbody.position;
+    
     private void Update()
     {
         var inputY = Input.GetAxis("Vertical");

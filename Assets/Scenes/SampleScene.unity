@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 398939164}
   - component: {fileID: 398939163}
   - component: {fileID: 398939162}
-  m_Layer: 0
-  m_Name: Sphere (1)
+  m_Layer: 6
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,6 +217,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &580462175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580462177}
+  - component: {fileID: 580462176}
+  m_Layer: 0
+  m_Name: root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &580462176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580462175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5620dd224790420b89a5a23fe8a7429a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMovement: {fileID: 1987268269}
+--- !u!4 &580462177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580462175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.1081166, y: 1.2901268, z: 0.49048793}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -313,7 +357,7 @@ GameObject:
   - component: {fileID: 1179425986}
   - component: {fileID: 1179425985}
   - component: {fileID: 1179425984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +452,7 @@ GameObject:
   - component: {fileID: 1419158179}
   - component: {fileID: 1419158178}
   - component: {fileID: 1419158177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,12 +636,23 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524737077}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0.09, y: 0.76, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!114 &1987268269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 986173205996887409, guid: 73d8334f98c601e4d9e2169b865023c7, type: 3}
+  m_PrefabInstance: {fileID: 986173205620233180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d51d7db0e27104d92b2b9d519d8420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2006690343
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +664,6 @@ GameObject:
   - component: {fileID: 2006690347}
   - component: {fileID: 2006690346}
   - component: {fileID: 2006690345}
-  - component: {fileID: 2006690344}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -617,20 +671,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2006690344
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006690343}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2006690345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -715,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 986173205996887408, guid: 73d8334f98c601e4d9e2169b865023c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.33
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 986173205996887408, guid: 73d8334f98c601e4d9e2169b865023c7, type: 3}
       propertyPath: m_LocalRotation.w

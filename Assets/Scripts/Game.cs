@@ -3,16 +3,38 @@ using UnityEngine;
 
 public class Game
 {
-    public GameState State;
+    private GameState _state;
+
+    public GameState State
+    {
+        get => _state;
+        set
+        {
+            if (_state == value)
+            {
+                return;
+            }
+            _state = value;
+            GameStateChange?.Invoke(value);
+        }
+    }
 
     public event Action<GameState> GameStateChange;
-    public event Action Blast;
-    
-    public float BlastTimer { get; private set; }
     
     public void Start()
     {
-        GameStateChange?.Invoke(GameState.Game);
+        State = GameState.Game;
+    }
+
+    public void ToMainMenu()
+    {
+        State = GameState.MainMenu;
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        State = GameState.Pause;
     }
 
     public void Exit()
@@ -20,13 +42,8 @@ public class Game
         Application.Quit();
     }
 
-    public void Tick()
+    public void Return()
     {
-        BlastTimer -= Time.deltaTime;
-        if (BlastTimer < 0)
-        {
-            BlastTimer = 10f;
-            Blast?.Invoke();
-        }
+        State = GameState.Game;
     }
 }
