@@ -28,7 +28,7 @@ public class PartsSpawner : MonoBehaviour
 
     private void PartCollected(Part part)
     {
-        ScoresHolder.OnPlayer++;
+        ScoresHolder.Scores++;
         Destroy(part.gameObject);
     }
 }
