@@ -19,12 +19,7 @@ public abstract class Menu : MonoBehaviour
             return _game;
         }
     }
-
-    private void Awake()
-    {
-        _gameObject = gameObject;
-    }
-
+    
     private void OnDestroy()
     {
         _game.GameStateChange -= GameStateChanged;
@@ -32,6 +27,7 @@ public abstract class Menu : MonoBehaviour
 
     public void Init(Game game)
     {
+        _gameObject = gameObject;
         _game = game;
         _game.GameStateChange += GameStateChanged;
         GameStateChanged(game.State);

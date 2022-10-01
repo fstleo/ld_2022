@@ -1,21 +1,25 @@
 ﻿using UnityEngine;
 
-public class PartsHolder
+public class PartsHolder : MonoBehaviour
 {
-    private readonly int _partsBurst;
-    private readonly GameObject _partPrefab;
+    [SerializeField]
+    private  int _partsBurst;
+    
+    [SerializeField]
+    private GameObject _partPrefab;
 
-    public PartsHolder(int partsBurst, GameObject partPrefab)
+    [SerializeField] private Transform[] _spawnPoints;
+    
+    public void Init(Blast blast)
     {
-        _partsBurst = partsBurst;
-        _partPrefab = partPrefab;
+        blast.Explosion += ThrowPart;
     }
 
     private void ThrowPart()
     {
         for (int i = 0; i < _partsBurst; i++)
         {
-            var part = Object.Instantiate(_partPrefab).GetComponent<Part>();
+            var part = Object.Instantiate(_partPrefab, _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity).GetComponent<Part>();
             part.Collected += PartCollected;
         }
     }
