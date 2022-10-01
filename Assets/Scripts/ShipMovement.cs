@@ -15,6 +15,8 @@ public class ShipMovement : MonoBehaviour
     [SerializeField]
     private Transform _rightEngineTransform;
 
+    public Vector3 Position => _rbody.position;
+    
     private float _timer;
     
     public void Init(Blast blast)
@@ -22,7 +24,7 @@ public class ShipMovement : MonoBehaviour
         blast.Explosion += OnExplosion;
     }
 
-    private void OnExplosion()
+    private void OnExplosion(Vector3 explosionPosition)
     {
         _timer += Random.Range(0, 0.5f);
     }

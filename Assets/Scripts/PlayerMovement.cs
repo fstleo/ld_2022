@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,5 +17,7 @@ public class PlayerMovement : MonoBehaviour
         var input = new Vector3(inputX, 0,inputY);
 
         _rigidbody.AddForce(input * (_speed * Time.deltaTime), ForceMode.Acceleration);
+        var position = Position;
+        _rigidbody.position = new Vector3(position.x, 0, position.z);
     }
 }

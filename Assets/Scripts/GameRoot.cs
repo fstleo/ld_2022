@@ -1,23 +1,26 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class GameRoot : Root
 {
-    private Blast _blast;
 
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private ShipMovement _shipMovement;
     [SerializeField] private PartsHolder _partsHolder;
+    [SerializeField] private ShipExplosionListener _shipExplosionListener;
     
     [SerializeField] private Bounds _bounds;
+    [SerializeField] private MapSpawner _mapSpawner;
     
     protected override void Initialize()
     {
-        _blast = new Blast(10);
-        new PlayerInExplosionChecker(_blast, _playerMovement, GameInstance);
-        _shipMovement.Init(_blast);
-        _partsHolder.Init(_blast);
+        var blast = new Blast();
+        new PlayerInExplosionChecker(blast, _playerMovement, GameInstance);
+        
+        _shipMovement.Init(blast);
+        _partsHolder.Init(blast);
+        _shipExplosionListener.Init(blast);
+        // _mapSpawner.Init(_shipMovement);
     }
 
     private void OnDrawGizmos()
@@ -27,8 +30,6 @@ public class GameRoot : Root
     
     private void Update()
     {
-        _blast.Tick();
-
         if (!Input.GetButtonDown("Cancel"))
         {
             return;
@@ -53,3 +54,4 @@ public class GameRoot : Root
         
     }
 }
+

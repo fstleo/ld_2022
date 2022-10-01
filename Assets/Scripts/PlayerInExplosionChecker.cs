@@ -18,12 +18,13 @@ public class PlayerInExplosionChecker
         blast.Explosion += CheckPlayer;
     }
 
-    private void CheckPlayer()
+    private void CheckPlayer(Vector3 blastPosition)
     {
-        bool hitSomething = Physics.Raycast(_blast.Position, _player.Position - _blast.Position,
-            (_player.Position - _blast.Position).magnitude, _obstaclesLayerMask);  
+        bool hitSomething = Physics.Raycast(blastPosition, _player.Position - blastPosition,
+            (_player.Position - blastPosition).magnitude, _obstaclesLayerMask);  
         if (!hitSomething)
         {
+            Debug.Log("Player in explosion!");
             // _game.GameOver();
         }
     }

@@ -15,7 +15,7 @@ public class PartsHolder : MonoBehaviour
         blast.Explosion += ThrowPart;
     }
 
-    private void ThrowPart()
+    private void ThrowPart(Vector3 explosionPosition)
     {
         for (int i = 0; i < _partsBurst; i++)
         {
