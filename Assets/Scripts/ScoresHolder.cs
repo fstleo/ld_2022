@@ -24,16 +24,4 @@ public class ScoresHolder
             }
         }
     }
-
-    public static int OnPlayer
-    {
-        get;
-        set;
-    }
-
-    public static void ApplyScores()
-    {
-        Scores += OnPlayer;
-        OnPlayer = 0;
-    }
 }

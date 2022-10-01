@@ -6,12 +6,14 @@ public class Part : MonoBehaviour
 {
     public event Action<Part> Collected;
 
+    [SerializeField] private Collider _trigger;
     [SerializeField] private Rigidbody _rbody;
     [SerializeField] private float _minThrowVelocity;
     [SerializeField] private float _maxThrowVelocity;
     [SerializeField] private float _throwAngleDelta;
     private bool _eligibleForCollect;
-
+     
+    
     private SpringJoint _joint;
     public void Throw(Vector3 direction)
     {
@@ -28,6 +30,7 @@ public class Part : MonoBehaviour
             _joint.maxDistance = 0.2f;
             _joint.connectedBody = _rbody;
             _eligibleForCollect = true;
+            _trigger.enabled = false;
         }
 
         if (_eligibleForCollect && other.CompareTag("Spaceship"))
