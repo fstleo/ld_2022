@@ -48,13 +48,7 @@ public class MapSpawner: MonoBehaviour
         _mapBounds = _shipBounds;
         _mapBounds.size *= 3;
     }
-
-    private void OnDrawGizmos()
-    {
-        // Gizmos.DrawCube(_shipBounds.center, _shipBounds.size);
-        // Gizmos.DrawWireCube(_mapBounds.center,_mapBounds.size);
-    }
-
+    
     private void Update()
     {
         if (!_shipBounds.Contains(_shipMovement.Position))

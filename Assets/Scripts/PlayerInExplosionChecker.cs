@@ -24,7 +24,7 @@ public class PlayerInExplosionChecker
         if (!hitSomething)
         {
             Debug.Log("Player in explosion!");
-            // _game.GameOver();
+            _game.GameOver();
         }
     }
 }

@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e88fc474b7e454e962265b5150ed0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _trigger: {fileID: 2745569636403144076}
   _rbody: {fileID: 5705430200717735920}
   _minThrowVelocity: 3
   _maxThrowVelocity: 5
