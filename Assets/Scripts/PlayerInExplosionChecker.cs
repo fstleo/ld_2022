@@ -24,7 +24,7 @@ public class PlayerInExplosionChecker
             (_player.Position - _blast.Position).magnitude, _obstaclesLayerMask);  
         if (!hitSomething)
         {
-            _game.GameOver();
+            // _game.GameOver();
         }
     }
 }

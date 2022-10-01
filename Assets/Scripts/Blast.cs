@@ -14,7 +14,7 @@ public class Blast
         BlastTimer = blastTimer;
         _timeBetweenBlasts = blastTimer;
     }
-
+    
     public void Tick()
     {
         BlastTimer -= Time.deltaTime;

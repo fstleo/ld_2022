@@ -1,12 +1,16 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class GameRoot : MonoBehaviour
+public class GameRoot : Root
 {
     private Blast _blast;
 
     [SerializeField] private PlayerMovement _playerMovement;
-
+    [SerializeField] private NavMeshAgent _shipMeshAgent;
+    
+    [SerializeField] private Bounds _bounds;
+    
     [SerializeField]
     private PauseMenu _pauseMenu;
     
@@ -16,14 +20,24 @@ public class GameRoot : MonoBehaviour
     [SerializeField]
     private GameOverMenu _gameOverMenu;
 
-    
-    private void Awake()
+    protected override void Initialize()
     {
+        InitializeMenu();
         _blast = new Blast(10f);
-        new PlayerInExplosionChecker(_blast, _playerMovement, Root.GameInstance);
-        _pauseMenu.Init(Root.GameInstance);
-        _gameMenu.Init(Root.GameInstance);
-        _gameOverMenu.Init(Root.GameInstance);
+        new PlayerInExplosionChecker(_blast, _playerMovement, GameInstance);
+        new ShipMovement(_shipMeshAgent, _blast, _bounds);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(_bounds.center, _bounds.size);
+    }
+
+    private void InitializeMenu()
+    {
+        _pauseMenu.Init(GameInstance);
+        _gameMenu.Init(GameInstance);
+        _gameOverMenu.Init(GameInstance);
     }
 
     private void Update()
@@ -34,24 +48,23 @@ public class GameRoot : MonoBehaviour
         {
             return;
         }
-        switch (Root.GameInstance.State)
+        switch (GameInstance.State)
         {
             case GameState.Pause:
-                Root.GameInstance.Return();
+                GameInstance.Return();
                 break;
             case GameState.Game:
-                Root.GameInstance.Pause();
+                GameInstance.Pause();
                 break;
             case GameState.MainMenu:
-                Root.GameInstance.Exit();
+                GameInstance.Exit();
                 break;
             case GameState.GameOver:
-                Root.GameInstance.ToMainMenu();
+                GameInstance.ToMainMenu();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
-
-
+        
     }
 }

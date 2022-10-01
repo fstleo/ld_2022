@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Root : MonoBehaviour
+public abstract class Root : MonoBehaviour
 {
     public static Game GameInstance
     {
@@ -8,8 +8,6 @@ public class Root : MonoBehaviour
         private set;
     }
     
-    [SerializeField]
-    private MainMenu _mainMenu;
     
     private void Awake()
     {
@@ -18,6 +16,8 @@ public class Root : MonoBehaviour
             GameInstance = new Game();
             var sceneSwitcher = new SceneSwitcher(GameInstance);
         }
-        _mainMenu.Init(GameInstance);
+        Initialize();
     }
+
+    protected abstract void Initialize();
 }
