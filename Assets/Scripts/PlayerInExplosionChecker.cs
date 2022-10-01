@@ -5,10 +5,9 @@ public class PlayerInExplosionChecker
     private readonly Blast _blast;
     private readonly PlayerMovement _player;
     private readonly Game _game;
-
-    private RaycastHit[] _raycastHits;
-
-    private LayerMask _obstaclesLayerMask;
+    
+    private readonly LayerMask _obstaclesLayerMask;
+    
     public PlayerInExplosionChecker(Blast blast, PlayerMovement player, Game game)
     {
         _blast = blast;
