@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: _partsBurst
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8533841424320071378, guid: 4bca62958dbdce54494f2394d66b8d8e, type: 3}
+      propertyPath: m_Range
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 8533841425039998888, guid: 4bca62958dbdce54494f2394d66b8d8e, type: 3}
       propertyPath: _partPrefab
       value: 
@@ -492,8 +496,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786942468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.67, y: -0.06, z: 1.5163213}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -18.95, y: 2.59, z: 1.5163213}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
