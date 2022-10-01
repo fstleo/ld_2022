@@ -12,8 +12,16 @@ PrefabInstance:
       value: Asteroid_B Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6504574997617746313, guid: 0232a2a6ad5c9ce41b628a425be9e182, type: 3}
+      propertyPath: m_Height
+      value: 7.67301
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504574997617746313, guid: 0232a2a6ad5c9ce41b628a425be9e182, type: 3}
       propertyPath: m_Radius
       value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504574997617746313, guid: 0232a2a6ad5c9ce41b628a425be9e182, type: 3}
+      propertyPath: m_Center.y
+      value: 2.0952802
       objectReference: {fileID: 0}
     - target: {fileID: 6504574997617746316, guid: 0232a2a6ad5c9ce41b628a425be9e182, type: 3}
       propertyPath: m_RootOrder
