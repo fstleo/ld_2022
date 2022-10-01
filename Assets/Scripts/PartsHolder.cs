@@ -19,7 +19,9 @@ public class PartsHolder : MonoBehaviour
     {
         for (int i = 0; i < _partsBurst; i++)
         {
-            var part = Object.Instantiate(_partPrefab, _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity).GetComponent<Part>();
+            var spawnPointPosition = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
+            var part = Object.Instantiate(_partPrefab,spawnPointPosition , Quaternion.identity).GetComponent<Part>();
+            part.Throw((spawnPointPosition - transform.position).normalized);
             part.Collected += PartCollected;
         }
     }
