@@ -1,16 +1,12 @@
-using UnityEngine;
-
-public class MainMenu : MonoBehaviour
+public class MainMenu : Menu
 {
-    private Game _game;
-    
     public void OnStartGameClick()
     {
-        _game.Start();
+        Game.Start();
     }
 
     public void OnExit()
     {
-        _game.Exit();
+        Game.Exit();
     }
 }

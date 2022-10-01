@@ -2,17 +2,22 @@
 
 public class Root : MonoBehaviour
 {
-    private Game _game;
+    public static Game GameInstance
+    {
+        get;
+        private set;
+    }
+    
+    [SerializeField]
+    private MainMenu _mainMenu;
     
     private void Awake()
-    { 
-        DontDestroyOnLoad(this);
-        _game = new Game();
-        var sceneSwitcher = new SceneSwitcher(_game);
-    }
-
-    private void Update()
     {
-        _game.Tick();
+        if (GameInstance == null)
+        {
+            GameInstance = new Game();
+            var sceneSwitcher = new SceneSwitcher(GameInstance);
+        }
+        _mainMenu.Init(GameInstance);
     }
 }
