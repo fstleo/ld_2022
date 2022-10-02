@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -21,8 +22,21 @@ public class PlayerMovement : MonoBehaviour
 
         var input = new Vector3(inputX, 0,inputY);
 
+        if (input.sqrMagnitude > 0.01f)
+        {
+            SoundManager.PlayLoop(SoundId.Hiss);
+        }
+        else
+        {
+            SoundManager.StopLoop(SoundId.Hiss);
+        }
         _rigidbody.AddForce(input * (_speed * Time.deltaTime), ForceMode.Acceleration);
         
         _transform.forward = _rigidbody.velocity;
+    }
+
+    private void OnDestroy()
+    {
+        SoundManager.StopLoop(SoundId.Hiss);
     }
 }

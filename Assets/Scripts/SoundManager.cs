@@ -8,7 +8,8 @@ public enum SoundId
     Click,
     Lock,
     PartCashIn,
-    Explosion
+    Explosion,
+    Hiss
 }
 
 public class SoundManager : MonoBehaviour
@@ -34,6 +35,8 @@ public class SoundManager : MonoBehaviour
     
     [SerializeField]
     private AudioSource _musicSource;
+
+    private Dictionary<SoundId, AudioSource> _loopSounds = new Dictionary<SoundId, AudioSource>();
 
     public float SoundLevel
     {
@@ -83,20 +86,46 @@ public class SoundManager : MonoBehaviour
         _instance.Play(id);
     }
 
+    public static void PlayLoop(SoundId id)
+    {
+        _instance.PlayLooped(id);
+    }
+
+    public static void StopLoop(SoundId id)
+    {
+        _instance.StopLooped(id);
+    }
+
+    private AudioClip GetRandomClip(SoundId id)
+    {
+        return _audioClips.TryGetValue(id, out var clips) ? clips[Random.Range(0, clips.Length)] : null;
+    }
+    
     private void Play(SoundId id)
     {
-        if (_audioClips.TryGetValue(id, out var clips))
+        _soundsSource.PlayOneShot(GetRandomClip(id));
+    }
+
+    private void PlayLooped(SoundId id)
+    {
+        if (_loopSounds.ContainsKey(id))
         {
-            var clip = clips[Random.Range(0, clips.Length)];
-            if (clip == null)
-            {
-                Debug.LogError($"Clip for {id} is null");
-            }
-            else
-            {
-                _soundsSource.PlayOneShot(clip);    
-            }
-            
+            return;
+        }
+        var audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.volume = SoundLevel;
+        audioSource.clip = GetRandomClip(id);
+        audioSource.loop = true;
+        audioSource.Play();
+        _loopSounds.Add(id, audioSource);
+    }
+
+    private void StopLooped(SoundId id)
+    {
+        if (_loopSounds.TryGetValue(id, out var soundSource))
+        {
+            Destroy(soundSource);
+            _loopSounds.Remove(id);
         }
     }
     
