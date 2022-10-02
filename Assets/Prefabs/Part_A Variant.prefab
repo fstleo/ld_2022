@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.012955308
       objectReference: {fileID: 0}
+    - target: {fileID: 2974073881806065387, guid: 1d5d0de54a341bd4e8edf17ad312231a, type: 3}
+      propertyPath: _lineMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a577799620967e04fa85c9d5397e6448, type: 2}
     - target: {fileID: 5269431624527353490, guid: 1d5d0de54a341bd4e8edf17ad312231a, type: 3}
       propertyPath: m_Name
       value: Part_A Variant

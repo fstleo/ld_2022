@@ -13,6 +13,6 @@ public class ShipExplosionListener : MonoBehaviour
 
     public void OnExplosionEvent()
     {
-        _blast.Explode(_transform.position);
+        _blast?.Explode(_transform.position);
     }
 }
