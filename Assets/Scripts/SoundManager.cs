@@ -81,6 +81,21 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public static void StartMusic()
+    {
+        _instance._musicSource.Play();
+    }
+
+    public static void PauseMusic()
+    {
+        _instance._musicSource.Pause();
+    }
+
+    public static void StopMusic()
+    {
+        _instance._musicSource.Stop();
+    }
+    
     public static void PlaySound(SoundId id)
     {
         _instance.Play(id);
