@@ -23,7 +23,6 @@ public class PlayerInExplosionChecker
             (_player.Position - blastPosition).magnitude, _obstaclesLayerMask);  
         if (!hitSomething)
         {
-            Debug.Log("Player in explosion!");
             _game.GameOver();
         }
     }

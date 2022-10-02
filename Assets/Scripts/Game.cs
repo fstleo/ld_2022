@@ -17,6 +17,8 @@ public class DJ
     {
         switch (state)
         {
+            case GameState.Tutorial:
+                break;
             case GameState.MainMenu:
                 SoundManager.StartMusic();
                 break;
@@ -69,6 +71,12 @@ public class Game
         State = GameState.Game;
     }
 
+    public void ShowTutorial()
+    {
+        State = GameState.Tutorial;
+    }
+
+    
     public void ToMainMenu()
     {
         State = GameState.MainMenu;

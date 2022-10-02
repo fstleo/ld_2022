@@ -24,7 +24,6 @@ public class CameraFollow : MonoBehaviour
         Vector3 cameraPos = gameObject.transform.position;
         Vector3 playerPos = playerObj.transform.position;
         float distance = Vector3.Distance(cameraPos, playerPos) - 8f;
-        Debug.Log(distance);
         cameraPos = Vector3.Lerp(cameraPos, playerPos, DelayFactor*Time.deltaTime);
         cameraPos.y = 8;
 

@@ -3,5 +3,6 @@
     MainMenu,
     Game,
     Pause,
+    Tutorial,
     GameOver
 }

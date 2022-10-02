@@ -53,6 +53,7 @@ public class Part : MonoBehaviour
             SoundManager.PlaySound(SoundId.PartCashIn);
             Destroy(_joint);
             Collected?.Invoke(this);
+            _eligibleForCollect = false;
         }
     }
 
@@ -63,6 +64,7 @@ public class Part : MonoBehaviour
             SoundManager.PlaySound(SoundId.PartCashIn);
             Destroy(_joint);
             Collected?.Invoke(this);
+            _eligibleForCollect = false;
         }
     }
 }

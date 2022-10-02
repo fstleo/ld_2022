@@ -17,7 +17,7 @@ public class SceneSwitcher
         {
             SceneManager.LoadScene("GameScene");
         }
-
+        
         if (state == GameState.MainMenu)
         {
             SceneManager.LoadScene("MainMenu");
