@@ -55,5 +55,14 @@ public class Part : MonoBehaviour
             Collected?.Invoke(this);
         }
     }
-    
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (_eligibleForCollect && other.CompareTag("Spaceship"))
+        {
+            SoundManager.PlaySound(SoundId.PartCashIn);
+            Destroy(_joint);
+            Collected?.Invoke(this);
+        }
+    }
 }
