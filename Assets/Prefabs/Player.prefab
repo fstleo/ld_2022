@@ -5495,11 +5495,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 272655068e5d6e9438b1818616005065, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a577799620967e04fa85c9d5397e6448, type: 2}
+      objectReference: {fileID: 2100000, guid: fb2d3a15b8b8aa743b481b6983413e78, type: 2}
     - target: {fileID: -7511558181221131132, guid: 272655068e5d6e9438b1818616005065, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: a577799620967e04fa85c9d5397e6448, type: 2}
+      objectReference: {fileID: 2100000, guid: e59d9300840bc3b429841c40a52c4ce7, type: 2}
     - target: {fileID: 919132149155446097, guid: 272655068e5d6e9438b1818616005065, type: 3}
       propertyPath: m_Name
       value: Astronaut
