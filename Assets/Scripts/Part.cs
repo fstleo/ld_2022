@@ -12,9 +12,9 @@ public class Part : MonoBehaviour
     [SerializeField] private float _maxThrowVelocity;
     [SerializeField] private float _throwAngleDelta;
     private bool _eligibleForCollect;
-     
     
     private SpringJoint _joint;
+    
     public void Throw(Vector3 direction)
     {
         _rbody.AddForce(Quaternion.Euler(0,Random.Range(-_throwAngleDelta,_throwAngleDelta),0) * direction * Random.Range(_minThrowVelocity, _maxThrowVelocity), ForceMode.Impulse);

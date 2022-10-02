@@ -23,6 +23,11 @@ public class SceneSwitcher
             SceneManager.LoadScene("MainMenu");
         }
 
+        if (state == GameState.GameOver)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
         _previousState = state;
     }
 }
