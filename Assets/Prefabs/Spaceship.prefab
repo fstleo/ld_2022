@@ -14978,7 +14978,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _partsBurst: 3
   _partPrefab:
-  - {fileID: 5269431624527353490, guid: 1d5d0de54a341bd4e8edf17ad312231a, type: 3}
+  - {fileID: 1342127001889494831, guid: 0dac41e8238374d49a4e15a80c6a4558, type: 3}
+  - {fileID: 5747320615071277560, guid: f2db821b64699704b89dc8b546a2c81a, type: 3}
+  - {fileID: 6265639076274071339, guid: fd8b19b36659eee4ca7cb2182627a5af, type: 3}
   _spawnPoints:
   - {fileID: 8534183444085555235}
   - {fileID: 3750934678606126541}
