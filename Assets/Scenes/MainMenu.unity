@@ -437,40 +437,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8019002621666029824, guid: 7bff16657dab0d4428c9bf90c0856583, type: 3}
-      propertyPath: m_text
-      value: 'Spaceship crew:
-
-        -
-
-        -
-
-        -
-
-        -
-
-        -'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8019002621666029839, guid: 7bff16657dab0d4428c9bf90c0856583, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 303.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8019002621681067877, guid: 7bff16657dab0d4428c9bf90c0856583, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -1081.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8019002621681067877, guid: 7bff16657dab0d4428c9bf90c0856583, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -438.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 8019002621681067877, guid: 7bff16657dab0d4428c9bf90c0856583, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 6.8750305
-      objectReference: {fileID: 0}
-    - target: {fileID: 8019002621681067877, guid: 7bff16657dab0d4428c9bf90c0856583, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 113.67502
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bff16657dab0d4428c9bf90c0856583, type: 3}
 --- !u!1001 &8894678707537040667
