@@ -96,4 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e2d1fb3cf27544dabb75d9e71ab76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxSize: 15
+  MinSize: 11
   DelayFactor: 3
