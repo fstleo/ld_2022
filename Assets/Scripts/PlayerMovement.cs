@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
         _rigidbody.AddForce(input * (_speed * Time.deltaTime), ForceMode.Acceleration);
         
-        var position = Position;
         _transform.forward = _rigidbody.velocity;
     }
 }

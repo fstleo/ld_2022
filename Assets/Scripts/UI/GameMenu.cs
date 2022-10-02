@@ -2,6 +2,7 @@
 {
     public void Pause()
     {
+        SoundManager.PlaySound(SoundId.Click);
         Game.Pause();
     }
 }

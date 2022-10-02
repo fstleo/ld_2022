@@ -45,10 +45,12 @@ public class Part : MonoBehaviour
             _eligibleForCollect = true;
             _trigger.enabled = false;
             _lineRenderer.positionCount = 2;
+            SoundManager.PlaySound(SoundId.Lock);
         }
 
         if (_eligibleForCollect && other.CompareTag("Spaceship"))
         {
+            SoundManager.PlaySound(SoundId.PartCashIn);
             Destroy(_joint);
             Collected?.Invoke(this);
         }
