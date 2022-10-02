@@ -3,16 +3,17 @@
 public class PartsSpawner : MonoBehaviour
 {
     [SerializeField]
-    private  int _partsBurst;
+    private int _partsBurst;
     
     [SerializeField]
-    private GameObject _partPrefab;
+    private GameObject [] _partPrefab;
 
     [SerializeField] private Transform[] _spawnPoints;
     
     public void Init(Blast blast)
     {
         blast.Explosion += ThrowPart;
+        ThrowPart(transform.position);
     }
 
     private void ThrowPart(Vector3 explosionPosition)
@@ -20,7 +21,7 @@ public class PartsSpawner : MonoBehaviour
         for (int i = 0; i < _partsBurst; i++)
         {
             var spawnPointPosition = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
-            var part = Instantiate(_partPrefab,spawnPointPosition , Quaternion.identity).GetComponent<Part>();
+            var part = Instantiate(_partPrefab[Random.Range(0, _partPrefab.Length)],spawnPointPosition , Quaternion.identity).GetComponent<Part>();
             part.Throw((spawnPointPosition - transform.position).normalized);
             part.Collected += PartCollected;
         }

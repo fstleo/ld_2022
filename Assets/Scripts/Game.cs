@@ -40,7 +40,7 @@ public class Game
 
     public void GameOver()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         State = GameState.GameOver;
     }
 
