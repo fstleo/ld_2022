@@ -25,6 +25,7 @@ public class DJ
             case GameState.Game when _previousState != GameState.Pause:
                 SoundManager.StopMusic();
                 SoundManager.StartMusic();
+                ScoresHolder.Scores = 0;
                 break;
             case GameState.Game when _previousState == GameState.Pause:
                 SoundManager.StartMusic();
